@@ -80,11 +80,16 @@ npm start
 
 front matter が不正な MDX があるとビルド時にエラーになります。
 
-## Vercel デプロイ
+## Vercel デプロイ（GitHub 連携）
 
-1. リポジトリを Vercel に接続
-2. 環境変数 `NEXT_PUBLIC_SITE_URL` に本番 URL（例: `https://example.com`）を設定
-3. デプロイ
+リポジトリ: [github.com/yamanekodev1/freelance-invoice-tool-comparison](https://github.com/yamanekodev1/freelance-invoice-tool-comparison)
+
+1. [Vercel で GitHub リポジトリを Import](https://vercel.com/new/import?s=https://github.com/yamanekodev1/freelance-invoice-tool-comparison)（初回は GitHub アプリのインストールを許可）
+2. Framework Preset は **Next.js** のまま、`npm run build` / 出力設定はデフォルトで問題ありません
+3. **Environment Variables** に `NEXT_PUBLIC_SITE_URL` を追加（初回デプロイ後に付与された本番 URL、例: `https://freelance-invoice-tool-comparison.vercel.app`）。設定後 **Redeploy** すると sitemap / canonical / OGP が正しい URL になります
+4. Deploy を実行。以降 `main` への push で Production デプロイ（設定で Preview も有効）
+
+トップページ（`/`）のみ `noindex` です。記事ページ等はインデックス対象のままです。
 
 サイトマップ（`/sitemap.xml`）と robots.txt は App Router の Metadata Route から自動生成されます。
 
