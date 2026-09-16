@@ -89,9 +89,17 @@ front matter が不正な MDX があるとビルド時にエラーになりま�
 3. **Environment Variables** に `NEXT_PUBLIC_SITE_URL` を追加（初回デプロイ後に付与された本番 URL、例: `https://freelance-invoice-tool-comparison.vercel.app`）。設定後 **Redeploy** すると sitemap / canonical / OGP が正しい URL になります
 4. Deploy を実行。以降 `main` への push で Production デプロイ（設定で Preview も有効）
 
-トップページ（`/`）のみ `noindex` です。記事ページ等はインデックス対象のままです。
+トップページ（`/`）のみ **プレ公開用に `noindex`** です。記事ページ等はインデックス対象のままです。
 
 サイトマップ（`/sitemap.xml`）と robots.txt は App Router の Metadata Route から自動生成されます。
+
+## 正式公開チェックリスト
+
+公開前に忘れず実施してください。
+
+- [ ] **トップの noindex を外す** — [`app/page.tsx`](app/page.tsx) の `export const metadata` 内 `robots: { index: false, ... }` を削除（または `index: true` に変更）して `main` にデプロイ
+- [ ] `NEXT_PUBLIC_SITE_URL` が本番 URL になっているか確認し、必要なら Redeploy
+- [ ] Search Console 等で sitemap を送信（任意）
 
 ## 環境変数
 
