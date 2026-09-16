@@ -6,9 +6,11 @@ import { Badge } from "@/components/ui/badge";
 import { getAllCategories } from "@/lib/categories";
 import { HOME_LATEST_POSTS } from "@/lib/constants";
 import { getAllPosts } from "@/lib/posts";
+import { buildHomePageMetadata } from "@/lib/seo";
 
 // TODO(正式公開): プレ公開用 noindex。公開時は metadata.robots を削除する（README「正式公開チェックリスト」参照）。
 export const metadata: Metadata = {
+  ...buildHomePageMetadata(),
   robots: {
     index: false,
     follow: true,

@@ -2,6 +2,16 @@ import type { Metadata } from "next";
 import { getSiteUrl, SITE_NAME } from "@/lib/constants";
 import type { PostMeta } from "@/types/post";
 
+export function buildHomePageMetadata(): Metadata {
+  const siteUrl = getSiteUrl();
+  return {
+    alternates: { canonical: siteUrl },
+    openGraph: {
+      url: siteUrl,
+    },
+  };
+}
+
 export function buildDefaultMetadata(overrides?: Metadata): Metadata {
   const siteUrl = getSiteUrl();
   return {

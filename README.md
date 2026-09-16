@@ -86,7 +86,7 @@ front matter が不正な MDX があるとビルド時にエラーになりま�
 
 1. [Vercel で GitHub リポジトリを Import](https://vercel.com/new/import?s=https://github.com/yamanekodev1/freelance-invoice-tool-comparison)（初回は GitHub アプリのインストールを許可）
 2. Framework Preset は **Next.js** のまま、`npm run build` / 出力設定はデフォルトで問題ありません
-3. **Environment Variables** に `NEXT_PUBLIC_SITE_URL` を追加（初回デプロイ後に付与された本番 URL、例: `https://freelance-invoice-tool-comparison.vercel.app`）。設定後 **Redeploy** すると sitemap / canonical / OGP が正しい URL になります
+3. **Environment Variables** に `NEXT_PUBLIC_SITE_URL=https://sideeng.yamaneko-cafe.com` を設定（未設定時も本番ビルドはこの URL を既定値として使います。`VERCEL_URL` は参照しません）
 4. Deploy を実行。以降 `main` への push で Production デプロイ（設定で Preview も有効）
 
 トップページ（`/`）のみ **プレ公開用に `noindex`** です。記事ページ等はインデックス対象のままです。
