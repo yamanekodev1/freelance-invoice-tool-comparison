@@ -19,12 +19,6 @@ export function Header() {
           >
             記事一覧
           </Link>
-          <Link
-            href="/about"
-            className="font-medium text-foreground/80 hover:text-indigo-600"
-          >
-            運営者情報
-          </Link>
         </nav>
       </Container>
     </header>

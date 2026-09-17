@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactFormLink } from "@/components/layout/contact-form-link";
 import { Container } from "@/components/layout/container";
 import { SITE_NAME } from "@/lib/constants";
 
@@ -23,8 +24,11 @@ export default function AboutPage() {
       </ul>
       <h2>お問い合わせ</h2>
       <p>
-        お問い合わせ窓口は準備中です。誤りの指摘等は、リポジトリの Issue 等で受け付ける予定です。
+        記事内容の誤りのご指摘、広告主様からのご連絡等は、下記のお問い合わせフォームよりお願いいたします。
       </p>
+      <div className="not-prose">
+        <ContactFormLink variant="button" />
+      </div>
     </Container>
   );
 }

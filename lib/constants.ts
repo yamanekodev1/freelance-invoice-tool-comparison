@@ -7,6 +7,9 @@ export const POSTS_PER_PAGE = 12;
 
 export const HOME_LATEST_POSTS = 6;
 
+export const CONTACT_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScSpRJrtuhPTc3Du4K37Glh7iadUKtNuPtwieNFXLjb1r1dmw/viewform?usp=dialog";
+
 /** 本番サイトの公開 URL（canonical / OGP / sitemap の既定値） */
 export const PRODUCTION_SITE_URL = "https://sideeng.yamaneko-cafe.com";
 
