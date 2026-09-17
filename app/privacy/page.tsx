@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <Container className="prose prose-neutral max-w-3xl dark:prose-invert">
+    <Container className="prose-site">
       <h1>プライバシーポリシー</h1>
       <p>
         {SITE_NAME}

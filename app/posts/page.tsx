@@ -28,7 +28,9 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
 
   return (
     <Container>
-      <h1 className="mb-8 text-3xl font-bold tracking-tight">記事一覧</h1>
+      <h1 className="mb-8 text-3xl font-bold tracking-tight text-indigo-950">
+        記事一覧
+      </h1>
       <PostList posts={items} />
       <PostsPagination
         basePath="/posts"

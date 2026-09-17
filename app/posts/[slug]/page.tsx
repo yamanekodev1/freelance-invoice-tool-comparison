@@ -7,6 +7,7 @@ import { AffiliateDisclosure } from "@/components/posts/affiliate-disclosure";
 import { RelatedPosts } from "@/components/posts/related-posts";
 import { TableOfContents } from "@/components/posts/table-of-contents";
 import { PostJsonLd } from "@/components/seo/json-ld";
+import { CategoryBadge, PrBadge } from "@/components/posts/post-badges";
 import { Badge } from "@/components/ui/badge";
 import { formatPostDate } from "@/lib/format-date";
 import { renderMdx } from "@/lib/mdx";
@@ -46,19 +47,24 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <Container>
       <PostJsonLd post={post} />
-      <article className="mx-auto max-w-3xl">
+      <article className="w-full">
         <header className="mb-8 space-y-4 border-b border-border pb-8">
           <div className="flex flex-wrap gap-2">
             <Link href={`/category/${post.categorySlug}`}>
-              <Badge variant="secondary">{post.category}</Badge>
+              <CategoryBadge>{post.category}</CategoryBadge>
             </Link>
+            {post.affiliateDisclosure && <PrBadge />}
             {post.tags.map((tag) => (
-              <Badge key={tag} variant="outline">
+              <Badge
+                key={tag}
+                variant="outline"
+                className="border-indigo-100 bg-indigo-50/50 text-indigo-900"
+              >
                 {tag}
               </Badge>
             ))}
           </div>
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-indigo-950 sm:text-4xl">
             {post.title}
           </h1>
           <p className="text-muted-foreground">{post.description}</p>
@@ -88,7 +94,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_240px]">
           <div>
             {post.affiliateDisclosure && <AffiliateDisclosure />}
-            <div className="prose prose-neutral max-w-none dark:prose-invert prose-headings:scroll-mt-24">
+            <div className="prose-site">
               {content}
             </div>
             <RelatedPosts posts={related} />

@@ -1,4 +1,4 @@
-export const SITE_NAME = "副業エンジニアの業務ハウツー";
+export const SITE_NAME = "副業エンジニアの活用ガイド";
 
 export const SITE_DESCRIPTION =
   "副業エンジニア向けのSaaS比較・ハウツーメディア。請求書・会計・契約書など業務効率化の情報を発信します。";

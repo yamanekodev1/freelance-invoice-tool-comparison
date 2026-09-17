@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
+import { CategoryBadge, PrBadge } from "@/components/posts/post-badges";
 import {
   Card,
   CardDescription,
@@ -16,16 +16,17 @@ type PostCardProps = {
 
 export function PostCard({ post }: PostCardProps) {
   return (
-    <Card className="flex h-full flex-col transition-colors hover:bg-muted/30">
+    <Card className="flex h-full flex-col transition-colors hover:border-indigo-200 hover:bg-indigo-50/30">
       <CardHeader className="gap-2">
         <div className="flex flex-wrap gap-2">
-          <Badge variant="secondary">{post.category}</Badge>
-          {post.affiliateDisclosure && (
-            <Badge variant="outline">PR</Badge>
-          )}
+          <CategoryBadge>{post.category}</CategoryBadge>
+          {post.affiliateDisclosure && <PrBadge />}
         </div>
         <CardTitle className="text-base leading-snug">
-          <Link href={`/posts/${post.slug}`} className="hover:underline">
+          <Link
+            href={`/posts/${post.slug}`}
+            className="text-foreground hover:text-indigo-600 hover:underline"
+          >
             {post.title}
           </Link>
         </CardTitle>

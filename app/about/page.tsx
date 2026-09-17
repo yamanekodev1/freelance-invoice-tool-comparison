@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <Container className="prose prose-neutral max-w-3xl dark:prose-invert">
+    <Container className="prose-site">
       <h1>運営者情報</h1>
       <p>
         {SITE_NAME}

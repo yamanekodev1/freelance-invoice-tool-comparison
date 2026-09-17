@@ -11,9 +11,9 @@ export function TableOfContents({ items }: TableOfContentsProps) {
   return (
     <nav
       aria-label="目次"
-      className="rounded-lg border border-border bg-muted/30 p-4 text-sm"
+      className="rounded-lg border border-indigo-100 bg-indigo-50/30 p-4 text-sm"
     >
-      <p className="mb-3 font-medium">目次</p>
+      <p className="mb-3 font-medium text-indigo-950">目次</p>
       <ol className="space-y-2">
         {items.map((item) => (
           <li
@@ -22,7 +22,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
           >
             <Link
               href={`#${item.id}`}
-              className="text-muted-foreground hover:text-foreground hover:underline"
+              className="text-muted-foreground hover:text-indigo-600 hover:underline"
             >
               {item.text}
             </Link>

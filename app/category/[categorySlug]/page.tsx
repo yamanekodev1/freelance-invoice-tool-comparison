@@ -34,7 +34,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <Container>
-      <h1 className="mb-2 text-3xl font-bold tracking-tight">
+      <h1 className="mb-2 text-3xl font-bold tracking-tight text-indigo-950">
         {category.category}
       </h1>
       <p className="mb-8 text-muted-foreground">{posts.length}件の記事</p>

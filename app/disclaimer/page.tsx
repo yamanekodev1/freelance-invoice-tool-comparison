@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <Container className="prose prose-neutral max-w-3xl dark:prose-invert">
+    <Container className="prose-site">
       <h1>免責事項</h1>
       <p>
         当サイトに掲載する情報は、正確性の確保に努めますが、その完全性・最新性を保証するものではありません。

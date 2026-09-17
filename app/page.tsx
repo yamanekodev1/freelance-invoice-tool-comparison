@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { PostList } from "@/components/posts/post-list";
-import { Badge } from "@/components/ui/badge";
+import { CategoryBadge } from "@/components/posts/post-badges";
 import { getAllCategories } from "@/lib/categories";
 import { HOME_LATEST_POSTS } from "@/lib/constants";
 import { getAllPosts } from "@/lib/posts";
@@ -24,7 +24,7 @@ export default function HomePage() {
   return (
     <Container className="space-y-12">
       <section className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-indigo-950 sm:text-4xl">
           副業エンジニアの業務を、もっとシンプルに
         </h1>
         <p className="max-w-2xl text-muted-foreground">
@@ -34,8 +34,11 @@ export default function HomePage() {
 
       <section className="space-y-4">
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-xl font-semibold">最新記事</h2>
-          <Link href="/posts" className="text-sm text-primary hover:underline">
+          <h2 className="text-xl font-semibold text-indigo-950">最新記事</h2>
+          <Link
+            href="/posts"
+            className="text-sm font-medium text-indigo-600 hover:text-indigo-700 hover:underline"
+          >
             すべて見る
           </Link>
         </div>
@@ -43,14 +46,14 @@ export default function HomePage() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">カテゴリから探す</h2>
+        <h2 className="text-xl font-semibold text-indigo-950">カテゴリから探す</h2>
         <ul className="flex flex-wrap gap-2">
           {categories.map((cat) => (
             <li key={cat.categorySlug}>
               <Link href={`/category/${cat.categorySlug}`}>
-                <Badge variant="secondary" className="text-sm px-3 py-1">
+                <CategoryBadge className="px-3 py-1 text-sm hover:bg-muted/80">
                   {cat.category}（{cat.count}）
-                </Badge>
+                </CategoryBadge>
               </Link>
             </li>
           ))}

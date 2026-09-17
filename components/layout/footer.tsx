@@ -8,10 +8,10 @@ export function Footer() {
       <Container className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p>&copy; {new Date().getFullYear()} {SITE_NAME}</p>
         <nav className="flex flex-wrap gap-4">
-          <Link href="/privacy" className="hover:text-foreground">
+          <Link href="/privacy" className="hover:text-indigo-600">
             プライバシーポリシー
           </Link>
-          <Link href="/disclaimer" className="hover:text-foreground">
+          <Link href="/disclaimer" className="hover:text-indigo-600">
             免責事項
           </Link>
         </nav>

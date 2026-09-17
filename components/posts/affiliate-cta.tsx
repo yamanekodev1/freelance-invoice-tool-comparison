@@ -8,11 +8,11 @@ type AffiliateCtaProps = {
 
 export function AffiliateCta({ href, lead, buttonText }: AffiliateCtaProps) {
   return (
-    <div className="not-prose my-8 rounded-lg border border-border bg-muted/20 p-5">
+    <div className="not-prose my-8 rounded-lg border border-indigo-100 bg-indigo-50/40 p-5">
       <p className="mb-4 text-sm leading-relaxed text-foreground">{lead}</p>
       <Button
         size="lg"
-        className="h-10 px-5 text-sm"
+        className="h-10 bg-indigo-600 px-5 text-sm text-white hover:bg-indigo-700"
         nativeButton={false}
         render={
           <a
