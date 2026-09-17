@@ -28,7 +28,7 @@ export default function HomePage() {
           副業エンジニアの業務を、もっとシンプルに
         </h1>
         <p className="max-w-2xl text-muted-foreground">
-          請求書・会計・契約書など、副業のバックオフィスに関する比較記事とハウツーを公開しています。
+          請求書・会計・契約書など、副業のバックオフィスに関する比較記事と実践ノウハウを公開しています。
         </p>
       </section>
 

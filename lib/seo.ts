@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getSiteUrl, SITE_NAME } from "@/lib/constants";
+import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
 import type { PostMeta } from "@/types/post";
 
 export function buildHomePageMetadata(): Metadata {
@@ -20,8 +20,7 @@ export function buildDefaultMetadata(overrides?: Metadata): Metadata {
       default: SITE_NAME,
       template: `%s | ${SITE_NAME}`,
     },
-    description:
-      "副業エンジニア向けのSaaS比較・ハウツーメディア。請求書・会計・契約書など業務効率化の情報を発信します。",
+    description: SITE_DESCRIPTION,
     openGraph: {
       type: "website",
       locale: "ja_JP",
