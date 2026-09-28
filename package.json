@@ -13,6 +13,7 @@
     "@anthropic-ai/sdk": "^0.125.0",
     "@base-ui/react": "^1.8.0",
     "@tailwindcss/typography": "^0.5.20",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/og": "^1.0.2",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.3.0",

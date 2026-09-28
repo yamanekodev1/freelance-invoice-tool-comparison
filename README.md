@@ -88,8 +88,7 @@ front matter が不正な MDX があるとビルド時にエラーになりま�
 2. Framework Preset は **Next.js** のまま、`npm run build` / 出力設定はデフォルトで問題ありません
 3. **Environment Variables** に `NEXT_PUBLIC_SITE_URL=https://sideeng.yamaneko-cafe.com` を設定（未設定時も本番ビルドはこの URL を既定値として使います。`VERCEL_URL` は参照しません）
 4. Deploy を実行。以降 `main` への push で Production デプロイ（設定で Preview も有効）
-
-トップページ（`/`）のみ **プレ公開用に `noindex`** です。記事ページ等はインデックス対象のままです。
+5. **Analytics** — [Vercel ダッシュボード](https://vercel.com/dashboard) → 対象プロジェクト → **Analytics** タブで **Enable**。コード側は [`app/layout.tsx`](app/layout.tsx) の `<Analytics />`（`@vercel/analytics`）で有効。本番デプロイ後、ページビューがダッシュボードに反映されます（`next dev` では計測されません）。
 
 サイトマップ（`/sitemap.xml`）と robots.txt は App Router の Metadata Route から自動生成されます。
 
